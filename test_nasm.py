@@ -20,6 +20,12 @@ def source(name):
     src_dir = os.path.join(dir, ".")
     return os.path.join(src_dir, name)
 
+def text_to_ram(text, offset=0):
+    ram = {}
+    for i in range(len(text)):
+        ram[i + offset] = ord(text[i])
+    ram[1 + len(text)] = 0
+    return ram
 
 @pytest.mark.telemetry_files(source("pseudo.nasm"))
 def test_pseudo_if():
