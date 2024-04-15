@@ -1,49 +1,6 @@
-# AV3 - Simulado
+# AV - Quiz - Simulado
 
-Simulado Avaliação 3 - Bits e Proc
-
-Você possui um total de 1h20 para realizar a avaliação, você pode decidir
-como usar o seu tempo.
-
-- **NÃO PODE USAR O GITHUB COPILOT**
-- **Trabalhar sozinho**
-- **1h20 min**
-- **REALIZAR UM COMMIT (A CADA QUESTÃO) E DAR PUSH AO FINALIZAR**
-
-## HW
-
-### 1. Teoria
-
-|       | pts HW | pts SW |
-|-------|--------|--------|
-| papel | 10     | 10     |
-
-Proponha uma série de modificações na CPU do nosso Z01.1 que:
-
-1.  Adiciona mais um registrador na nossa CPU `%S` (onde é melhor? justifique)
-1.  Você teria que modificar a linguagem de máquina do nosso HW. Proponha uma solução.
-1.  Possibilita `%D` endereçar a memória:       `movw %A, (%D)`
-1.  Possibilite fazer carregamento efetivo em `%D`: `leaw $5, %D`
-
-![](z01.png)
-
-### 1. Z01
-
-|         | pts HW | pts SW |
-|---------|--------|--------|
-| (papel) | 10     | 5      |
-
-O que acontece com a cpu quando as intrucões a seguir são executadas? Explique e desenhe na CPU o fluxo de dados.
-
-- `leaw $5, %A`
-- `addr (%A), $-1, %D`
-- `jle`
-
-![](z01.png)
-
-## Nasm
-
-### 4. (10 SW) pseudo
+### 1. (10 SW) pseudo
 
 | Arquivo: `nasm/pseudo.nasm` | pts HW | pts SW |
 | --------------------------- | ------ | ------ |
@@ -59,7 +16,7 @@ Transcreva para assembly do Z01 o pseudo código a seguir:
 ;     RAM5[5] = RAM[5] - 1
 ```
 
-### 5. (10 SW / 10 HW) Senha
+### 2. (10 SW / 10 HW) Senha
 
 | Arquivo: `nasm/reta.nasm` | pts HW | pts SW |
 | ------------------------- | ------ | ------ |
@@ -70,17 +27,21 @@ Você foi chamado para desenvolver uma fechadura eletrônica com o processador Z
 
 O cliente pediu para a fechadura ter a funcionalidades a seguir:
 
-A senha é definida pelo valor salvo em RAM[0] e o usuário insere uma senha pelas chaves (SW) da placa. O programa deve:
+A senha é definida pelo valor salvo em RAM[0] e o usuário insere uma senha pelas chaves (SW) da placa (RAM=21185). O programa deve:
 
-- Em caso da senha estar correta: acender o LED[0]
+- Em caso da senha estar correta: acender o LED[0] 
 - Em caso da senha estar errada: acender os LED[2] e LED[1]
 
-### 6. (25 SW) AlTERando CaIxA dE CAraCteRes
+O LED é representando pela RAM=21184
+
+![](https://insper.github.io/bits-e-proc/commum-content/teoria/figs/Z0-mapa-de-memoria.svg)
+
+### 3. (15 SW) AlTERando CaIxA dE CAraCteRes
 
 | Arquivo: `nasm/uppsercase.nasm`   | pts HW | pts SW |
 | --------------------------------- | ------ | ------ |
-| Teste 0: string exemplo           |        | 3      |
-| Teste 1: string tamanho diferente |        | 17     |
+| Teste 0: string exemplo           |        | 5      |
+| Teste 1: string tamanho diferente |        | 5     |
 | Teste 2: string com números       |        | 5      |
 
 Você deve desenvolver um programa em assembly que converte
